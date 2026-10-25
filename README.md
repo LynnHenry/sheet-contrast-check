@@ -62,6 +62,8 @@ By source:
 | PHerc0800 published segments | 6 | 2 |
 | PHerc1203 raw traces | 22 | 0 |
 
+The values for every clean-sheet patch are in [`data/clean_sheets_pass_fail.csv`](data/clean_sheets_pass_fail.csv).
+
 By scroll (`data/counts.json`):
 
 | scroll | voxel µm | surfaces | with sheet signal | order determined | order uncertain |
@@ -122,6 +124,7 @@ By scroll (`data/counts.json`):
 | `code/tile_profile.py` | command-line wrapper for one or more renders |
 | `code/orient.py` | layer direction of a render, and the inward/outward test |
 | `data/counts.json` | the counts above |
+| [`data/clean_sheets_pass_fail.csv`](data/clean_sheets_pass_fail.csv) | per clean-sheet patch (173 rows): scroll, voxel size, `contrast_median`, `peak_within3`, pass/fail, and for passing patches the geometric order and whether it is uncertain |
 | `data/controls.json` | control values |
 | `data/direction_calibration.json` | the calibration numbers |
 
