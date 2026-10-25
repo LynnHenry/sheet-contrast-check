@@ -125,6 +125,8 @@ By scroll (`data/counts.json`):
 | `data/controls.json` | control values |
 | `data/direction_calibration.json` | the calibration numbers |
 
+The same aggregates are logged as one public W&B run: [sheet-contrast-check / aggregate-results](https://forge.coreweave.com/wandb/lynnhenry-privat/sheet-contrast-check/runs/s27s6fjm).
+
 ## Credits and licences
 
 - Clean-sheet patches: Jack Gilman and Andrew Gilman, [Ahggggg/first-letters-clean-sheets](https://github.com/Ahggggg/first-letters-clean-sheets)
