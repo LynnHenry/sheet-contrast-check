@@ -17,12 +17,15 @@ First Letters candidate surfaces, and what it says about 201 surfaces we screene
   AUC from ~0.75 to ~0.58 on labelled PHerc0841. We therefore chose the order for every surface geometrically, by
   which sheet face looks toward the scroll centre. The rule is calibrated on labelled data, and its numbers are in
   the table below.
-- **A label-free order rule picked the wrong order for many surfaces.** The common rule "keep the order whose
-  prediction varies more" (larger standard deviation of the map) disagreed with the calibrated geometric order on
-  **35 of 81** surfaces with a sheet signal: 24 of the 60 surfaces whose order is determined, and 11 of the 21
-  uncertain ones. On the determined surfaces it is close to a coin toss (60 % agreement), so a screen that reads
-  `--direction both` this way looks at the wrong face for a large share of its surfaces. See also the discussion
-  "A read-out rule for --direction both" in the Vesuvius Challenge Discord.
+- **Our own label-free order heuristic was often wrong.** In our first screening pass we kept, for each surface,
+  the order whose `ink_9um` map varies more (larger standard deviation). This heuristic is ours, not a published
+  rule. It disagreed with the calibrated geometric order on **35 of 81** surfaces with a sheet signal: 24 of the 60
+  surfaces whose order is determined, and 11 of the 21 uncertain ones. On the determined surfaces that is only 60 %
+  agreement, close to a coin toss.
+  Related: freek_cool's thread "A read-out rule for --direction both" shows that forward and reversed outputs can
+  look alike on unread scrolls and proposes reporting their ratio
+  ([FreekCool/vesuvius-ink-harness](https://github.com/FreekCool/vesuvius-ink-harness)). Our geometric rule
+  complements this by fixing the facing independently of model output.
 - With the geometric order, `ink_9um` shows **no rows and no letter shapes** on any of the 81 surfaces with a
   sheet signal (visual inspection of all 81 maps). For the 21 surfaces with an uncertain order we inspected both
   orders. All of them show speckle in both, with no rows and no letter shapes.
