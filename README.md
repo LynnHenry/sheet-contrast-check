@@ -6,7 +6,9 @@ First Letters candidate surfaces, and what it says about 201 surfaces we screene
 ## In short
 
 - We screened 201 surfaces on 14 First Letters-eligible scrolls with `scrollprize/ink_9um` (seed43, step 50000).
-  The surfaces are 173 published clean-sheet patches, 6 published PHerc0800 segments and 22 raw PHerc1203 traces.
+  The surfaces are 173 published clean-sheet patches by Jack and Andrew Gilman
+  ([Ahggggg/first-letters-clean-sheets](https://github.com/Ahggggg/first-letters-clean-sheets), commit de78c8b),
+  6 published PHerc0800 segments and 22 raw PHerc1203 traces.
   Before counting any of it as a test, we measured whether each surface shows a sheet at all.
 - **81 of 201 surfaces have a sheet signal in the range of curated control segments.** The other 120 surfaces (60 %)
   are not a meaningful test of any ink model, whatever the model shows on them.
@@ -15,8 +17,15 @@ First Letters candidate surfaces, and what it says about 201 surfaces we screene
   AUC from ~0.75 to ~0.58 on labelled PHerc0841. We therefore chose the order for every surface geometrically, by
   which sheet face looks toward the scroll centre. The rule is calibrated on labelled data, and its numbers are in
   the table below.
+- **A label-free order rule picked the wrong order for many surfaces.** The common rule "keep the order whose
+  prediction varies more" (larger standard deviation of the map) disagreed with the calibrated geometric order on
+  **35 of 81** surfaces with a sheet signal: 24 of the 60 surfaces whose order is determined, and 11 of the 21
+  uncertain ones. On the determined surfaces it is close to a coin toss (60 % agreement), so a screen that reads
+  `--direction both` this way looks at the wrong face for a large share of its surfaces. See also the discussion
+  "A read-out rule for --direction both" in the Vesuvius Challenge Discord.
 - With the geometric order, `ink_9um` shows **no rows and no letter shapes** on any of the 81 surfaces with a
-  sheet signal (visual inspection of all 81 maps). For 21 of them the order is uncertain (see limits).
+  sheet signal (visual inspection of all 81 maps). For the 21 surfaces with an uncertain order we inspected both
+  orders. All of them show speckle in both, with no rows and no letter shapes.
 
 ## The sheet-contrast measure
 
@@ -93,7 +102,11 @@ By scroll (`data/counts.json`):
 - The patches are small: median 1.6 cm², and only a few are 4 cm² or larger. The sheet check says a sheet is there,
   not that the surface stays on one sheet everywhere.
 - A contrast near 1.0 can also come from air gaps next to the sheet.
-- For 21 surfaces the order is uncertain. For those we looked at both orders, but we do not count them as a clean test.
+- For 21 surfaces the order is uncertain: the curvature of the patch disagrees with the centroid rule. Both orders
+  look empty, but we do not count these surfaces as a clean test.
+- The clean-sheet patches' own `frame_correct_order` (outward → F) is the opposite of what the calibrated rule gives
+  for `ink_9um`-family models on `vc_render_tifxyz` renders (outward → reverse). This only matters for readers that
+  follow that field.
 - This is one model (`ink_9um`) read by eye. It is not evidence that these places carry no ink.
 - Our screening heuristic ("suspicion") also responds to sheet texture: median 0.31 with a sheet signal against
   0.21 without. It is a sorting aid, not a detector.
@@ -109,4 +122,14 @@ By scroll (`data/counts.json`):
 | `data/controls.json` | control values |
 | `data/direction_calibration.json` | the calibration numbers |
 
-Code: MIT. Derived numbers come from Vesuvius Challenge data (CC BY-NC 4.0). Written with help from Claude Code.
+## Credits and licences
+
+- Clean-sheet patches: Jack Gilman and Andrew Gilman, [Ahggggg/first-letters-clean-sheets](https://github.com/Ahggggg/first-letters-clean-sheets)
+  (de78c8b). Their code is MIT; their patches and tables are CC BY-NC 4.0. This repository contains none of their
+  files, only numbers measured on our renders of their patches.
+- Sheet-contrast tile profile: after rodriguescarson, [eligible-scroll-atlas](https://github.com/rodriguescarson/eligible-scroll-atlas) `scripts/analysis/profile.py`.
+- PHerc1447 control surfaces and labels: Youssef Nader, [ink-8um-pherc1447-surfaces](https://huggingface.co/datasets/YoussefMoNader/ink-8um-pherc1447-surfaces) (CC BY-NC 4.0).
+- Models: [scrollprize/ink_9um](https://huggingface.co/scrollprize/ink_9um), [YoussefMoNader/ink-8um-v8in](https://huggingface.co/YoussefMoNader/ink-8um-v8in) (calibration only).
+- Scans, meshes, umbilicus and surface predictions: Vesuvius Challenge open data (CC BY-NC 4.0). Rendering: villa's `vc_render_tifxyz`.
+
+Code in this repository: MIT. Derived numbers: CC BY-NC 4.0, following the scan data. Written with help from Claude Code.
