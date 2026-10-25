@@ -1,0 +1,137 @@
+{
+ "thresholds": {
+  "9.362um_113keV": {
+   "contrast_median": 0.44,
+   "peak_within3": 0.25
+  },
+  "8.64um_116keV": {
+   "contrast_median": 0.35,
+   "peak_within3": 0.22
+  }
+ },
+ "by_source": {
+  "Clean-Sheet": {
+   "sites": 173,
+   "sheet_signal": 79,
+   "direction_determined": 58,
+   "direction_uncertain": 21
+  },
+  "PHerc0800": {
+   "sites": 6,
+   "sheet_signal": 2,
+   "direction_determined": 2,
+   "direction_uncertain": 0
+  },
+  "PHerc1203": {
+   "sites": 22,
+   "sheet_signal": 0,
+   "direction_determined": 0,
+   "direction_uncertain": 0
+  }
+ },
+ "by_scroll": {
+  "PHerc0125": {
+   "sites": 1,
+   "sheet_signal": 0,
+   "direction_determined": 0,
+   "direction_uncertain": 0,
+   "voxel_um": 9.362
+  },
+  "PHerc0175A": {
+   "sites": 15,
+   "sheet_signal": 14,
+   "direction_determined": 9,
+   "direction_uncertain": 5,
+   "voxel_um": 8.64
+  },
+  "PHerc0191": {
+   "sites": 5,
+   "sheet_signal": 0,
+   "direction_determined": 0,
+   "direction_uncertain": 0,
+   "voxel_um": 9.362
+  },
+  "PHerc0211": {
+   "sites": 11,
+   "sheet_signal": 1,
+   "direction_determined": 1,
+   "direction_uncertain": 0,
+   "voxel_um": 9.362
+  },
+  "PHerc0257": {
+   "sites": 1,
+   "sheet_signal": 0,
+   "direction_determined": 0,
+   "direction_uncertain": 0,
+   "voxel_um": 9.362
+  },
+  "PHerc0306B": {
+   "sites": 7,
+   "sheet_signal": 4,
+   "direction_determined": 4,
+   "direction_uncertain": 0,
+   "voxel_um": 8.64
+  },
+  "PHerc0358": {
+   "sites": 5,
+   "sheet_signal": 3,
+   "direction_determined": 2,
+   "direction_uncertain": 1,
+   "voxel_um": 9.362
+  },
+  "PHerc0483B": {
+   "sites": 3,
+   "sheet_signal": 1,
+   "direction_determined": 1,
+   "direction_uncertain": 0,
+   "voxel_um": 8.64
+  },
+  "PHerc0800": {
+   "sites": 6,
+   "sheet_signal": 2,
+   "direction_determined": 2,
+   "direction_uncertain": 0,
+   "voxel_um": 8.64
+  },
+  "PHerc0813": {
+   "sites": 21,
+   "sheet_signal": 10,
+   "direction_determined": 8,
+   "direction_uncertain": 2,
+   "voxel_um": 9.362
+  },
+  "PHerc0826": {
+   "sites": 80,
+   "sheet_signal": 46,
+   "direction_determined": 33,
+   "direction_uncertain": 13,
+   "voxel_um": 9.362
+  },
+  "PHerc0846B": {
+   "sites": 2,
+   "sheet_signal": 0,
+   "direction_determined": 0,
+   "direction_uncertain": 0,
+   "voxel_um": 9.362
+  },
+  "PHerc1203": {
+   "sites": 31,
+   "sheet_signal": 0,
+   "direction_determined": 0,
+   "direction_uncertain": 0,
+   "voxel_um": 9.362
+  },
+  "PHerc1545": {
+   "sites": 13,
+   "sheet_signal": 0,
+   "direction_determined": 0,
+   "direction_uncertain": 0,
+   "voxel_um": 9.362
+  }
+ },
+ "totals": {
+  "sites": 201,
+  "sheet_signal": 81,
+  "direction_uncertain": 21
+ }
+}

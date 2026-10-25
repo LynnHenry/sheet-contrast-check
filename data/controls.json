@@ -1,0 +1,26 @@
+{
+ "PHerc0841_own_w00": {
+  "contrast_median": 0.437,
+  "peak_within3": 0.302
+ },
+ "PHerc0841_own_ag144": {
+  "contrast_median": 0.44,
+  "peak_within3": 0.259
+ },
+ "PHerc0841_own_ag174": {
+  "contrast_median": 0.456,
+  "peak_within3": 0.276
+ },
+ "PHerc0139_w043": {
+  "contrast_median": 0.765,
+  "peak_within3": 0.565
+ },
+ "PHerc1447_w058_crop3000": {
+  "contrast_median": 0.429,
+  "peak_within3": 0.407
+ },
+ "PHerc1447_w060_crop3000": {
+  "contrast_median": 0.351,
+  "peak_within3": 0.226
+ }
+}
