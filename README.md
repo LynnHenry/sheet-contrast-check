@@ -86,6 +86,14 @@ By scroll (`data/counts.json`):
 
 ## Reading order: calibration (`code/orient.py`, `data/direction_calibration.json`)
 
+**Earlier work.** Choosing the depth order from geometry was published before us: Matteo Bulloni's
+[`auto_order.py`](https://github.com/Bullo27/v8in-12gb) (MIT, posted on the Vesuvius Discord on 2 Oct 2026) uses the
+tifxyz grid normal against the scroll axis, taken as the centroid of the masked scan per z-slab. It reported the
+right order on 6 of 6 windings (PHerc0841 ×3, PHerc1447 ×3). Our rule below is the same idea, found independently
+later. It differs in three points: it measures the render's layer direction from the scan instead of taking a
+`--flip-normals` flag; it prefers the published umbilicus where there is one; and it adds a curvature check that
+marks surfaces as uncertain.
+
 1. **Layer direction of a render.** At 40–60 random pixels we correlate the render's depth profile with samples of
    the scan taken along +n and −n of the mesh normal. The sign that matches tells which way the layer index grows.
 2. **Scroll centre.** We use the published umbilicus where there is one; otherwise the centroid of the papyrus
@@ -135,6 +143,7 @@ The same aggregates are logged as one public W&B run: [sheet-contrast-check / ag
 - Clean-sheet patches: Jack Gilman and Andrew Gilman, [Ahggggg/first-letters-clean-sheets](https://github.com/Ahggggg/first-letters-clean-sheets)
   (de78c8b). Their code is MIT; their patches and tables are CC BY-NC 4.0. This repository contains none of their
   files, only numbers measured on our renders of their patches.
+- Depth order from geometry, earlier work: Matteo Bulloni, [Bullo27/v8in-12gb](https://github.com/Bullo27/v8in-12gb) `auto_order.py` (MIT).
 - Sheet-contrast tile profile: after rodriguescarson, [eligible-scroll-atlas](https://github.com/rodriguescarson/eligible-scroll-atlas) `scripts/analysis/profile.py`.
 - PHerc1447 control surfaces and labels: Youssef Nader, [ink-8um-pherc1447-surfaces](https://huggingface.co/datasets/YoussefMoNader/ink-8um-pherc1447-surfaces) (CC BY-NC 4.0).
 - Models: [scrollprize/ink_9um](https://huggingface.co/scrollprize/ink_9um), [YoussefMoNader/ink-8um-v8in](https://huggingface.co/YoussefMoNader/ink-8um-v8in) (calibration only).
